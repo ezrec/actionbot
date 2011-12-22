@@ -111,7 +111,7 @@ void RoboteqDevice::InitPort()
 	//cwrset.c_cc[VMIN] = 6;
 
 	//Set the New Comm Port Attributes through cwrset
-	tcsetattr (fd0, TCSANOW, &newtio);	/* Set the attribute NOW without waiting for Data to Complete*/
+	tcsetattr (handle, TCSANOW, &newtio);	/* Set the attribute NOW without waiting for Data to Complete*/
 }
 
 int RoboteqDevice::Write(string str)
