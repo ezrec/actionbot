@@ -20,7 +20,7 @@ int main(int argc, char *argv[])
 		cout<<"Error connecting to device " << devname << ": "<<status<<"."<<endl;
 		return 1;
 	}
-
+#if 0
 	cout<<"- SetConfig(_DINA, 1, 1)...";
 	if((status = device.SetConfig(_DINA, 1, 1)) != RQ_SUCCESS)
 		cout<<"failed --> "<<status<<endl;
@@ -29,7 +29,7 @@ int main(int argc, char *argv[])
 
 	//Wait 10 ms before sending another command to device
 	sleepms(10);
-
+#endif
 	int result;
 	cout<<"- GetConfig(_DINA, 1)...";
 	if((status = device.GetConfig(_DINA, 1, result)) != RQ_SUCCESS)
@@ -48,13 +48,13 @@ int main(int argc, char *argv[])
 
 	//Wait 10 ms before sending another command to device
 	sleepms(10);
-
+#if 0
 	cout<<"- SetCommand(_GO, 1, 1)...";
 	if((status = device.SetCommand(_GO, 1, 1)) != RQ_SUCCESS)
 		cout<<"failed --> "<<status<<endl;
 	else
 		cout<<"succeeded."<<endl;
-
+#endif
 	device.Disconnect();
 	return 0;
 }
